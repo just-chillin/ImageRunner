@@ -41,7 +41,8 @@ def ocr_main(file, extension):
     response = client.document_text_detection(image=image)
     destroy_filter()
     f = open('.tmp.' + extension, 'w+')
-    print(response.full_text_annotation.text, file=f)
+    str = response.full_text_annotation.text.replace('–', '-')
+    print(str, file=f)
     f.close()
 
 
