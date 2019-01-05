@@ -2,10 +2,12 @@ def main():
     print("Welcome to ImageRunner")
     Loop_var = True
     while Loop_var:
-        print("Please enter the file path ")
+        """print("Please enter the file path ")
         Path_var = input()
         print("Please enter the programming language ")
-        Lang_var = input()
+        Lang_var = input()"""
+        path, lang = input("Please enter the file path and the programming language separated by a comma \n").split(",")
+        print(path, lang)
         #This is where the program runs
         print('Would you like to input another file? (Yes, Y, y, or No, N, n)')
         x = input()
