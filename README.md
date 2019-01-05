@@ -49,3 +49,5 @@ I can't buy no bitch no wedding ring
 Rather go and buy Balmains, aye
 Gucci gang, Gucci gang, Gucci gang
 Lil Pump, yeah, Lil Pump, ooh
+
+Make sure to include your auth.json
