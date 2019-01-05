@@ -8,8 +8,10 @@ def main():
             #loop runs at least once and requests 2 inputs from the user
             result = input("Please enter the file path and the programming language separated by a comma\n").split(",")
             print(len(result))
-            if(len(result) != 2):
+            if(len(result) < 2):
                 print("Missing one of the inputs")
+            elif(len(result) > 2):
+                print("Too many inputs")
             else:
                 First_prompt = False
         #after confirming the user gave 2 inputs they are stored
