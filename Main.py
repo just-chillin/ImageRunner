@@ -15,19 +15,18 @@ def main():
         #after confirming the user gave 2 inputs they are stored
         path = result[0]
         lang = result[1]
-        print(path, lang)
         #OCR_main()
 
 
 
         #prompts the user to run the program again or exits
-        print('Would you like to input another file? (Yes, yes, Y, y, or No, no, N, n)')
-        x = input()
-        if(x == 'No' or 'N' or 'n' or 'no'):
+        x = input('Would you like to input another file? (Yes, yes, Y, y, or No, no, N, n)\n')
+        if (x == 'Yes' or x == 'Y' or x == 'y' or x == 'yes'):
+            First_prompt = True
+        if(x == 'No' or x == 'N' or x == 'n' or x == 'no'):
             Loop_var = False
-        if(x == 'Yes' or 'Y' or 'y' or 'yes'):
-            Loop_var = True
 
+    print("You've reached the end of the program!")
 
 if __name__ == "__main__":
     main()
