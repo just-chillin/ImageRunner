@@ -1,0 +1,6 @@
+{
+  "js": {
+    "interpreter": "/usr/local/bin/node",
+    "extension": "js"
+  }
+}
