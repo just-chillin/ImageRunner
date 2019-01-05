@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="foo"></div>
+<div2 class="dood"></div2>
+<div3 class="colors"></div3>
 <head>
     <meta charset="UTF-8">
     <title>ImageRunner</title>
+
 </head>
+<style>
+    div3{
+      position: absolute;
+      left: 0vw;
+      top: 6px;
+    }
+    div2{
+      position: absolute;
+      left: 2vw;
+      top: 3px;
+    }
+    div{
+      position: absolute;
+      left: 4vw;
+      top: 0px;
+    }
+    h2{
+      background-color: #D3D3D3;
+      font-size:16px;
+      margin: auto;
+      text-align: center;
+      font-width : 30vw;
+    }
+
+    h1{
+      font-size:7vw;
+      text-align: center;
+    }
+    .foo {
+  float: left;
+  width: 3vw;
+  height: 100vw;
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: #34a853
+  }
+    .dood {
+  float: left;
+  width: 3vw;
+  height: 100vw;
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: #ea4335
+  }
+    .colors {
+  float: left;
+  width: 3vw;
+  height: 100vw;
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: #4285f3
+  }
+</style>
+<h1>
+    <span style="color: #4285f4">I</span><span style="color: #ea4335">m</span><span style="color: #fbbc05">a</span><span style="color: #34a853">g</span><span style="color: #ea4335">e</span>
+    <span style="color: #4285f4">R</span><span style="color: #ea4335">u</span><span style="color: #fbbc05">n</span><span style="color: #34a853">n</span><span style="color: #ea4335">e</span><span style="color: #4285f3">r</span>
+</h1>
+<body>
+<h2>
 <form method="post" enctype="multipart/form-data">
+    <br>
     Language: <select name="lang">
     {% for lang in langs %}
         <option value="{{ lang }}">{{ lang }}</option>
     {% endfor %}
-</select>
+
+    </select>
+  <br>
+  <br>
     Image File: <input type="file" name="img" accept="image/*">
+    <br>
+    <br>
     <input type="submit">
+
 </form>
+    <br>
+    </h2>
 </body>
 </html>
