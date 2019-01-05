@@ -1,4 +1,5 @@
 from google.cloud import vision
+from google.cloud.vision import types
 import os
 import requests
 import sys
@@ -13,11 +14,16 @@ def ocr_main(file, lang):
     client = vision.ImageAnnotatorClient()
 
     with io.open(file, 'rb') as image_file:
-        image = client.image(content=image_file.read())
+        content = image_file.read()
 
-    labels = image.detect_labels()
-    for label in labels:
-        print(label.description)
+    image = vision.types.Image(content=content)
+
+    response = client.text_detection(image=image)
+    texts = response.text_annotations
+    for text in texts:
+        print(text.description)
+
+
 
 
 """
@@ -46,4 +52,4 @@ def ocr_main(file, lang):
 """
 
 if __name__ == "__main__":
-    ocr_main('text.pdf', 'python')
+    ocr_main('python_code.png', 'python')
