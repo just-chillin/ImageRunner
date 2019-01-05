@@ -20,7 +20,7 @@ def main():
         lang = result[1]
         #OCR_main()
 
-
+        #This loop runs to ensure the user enters a correct value to the question
         while(Incor):
             #prompts the user to run the program again or exits
             x = input('Would you like to input another file? (Yes, yes, Y, y, or No, no, N, n)\n')
