@@ -4,7 +4,7 @@ def main():
     while Loop_var:
         path, lang = input("Please enter the file path and the programming language separated by a comma \n").split(",")
         print(path, lang)
-        #This is where the program runs
+        #OCR_main()
         print('Would you like to input another file? (Yes, Y, y, or No, N, n)')
         x = input()
         if(x == 'No' or x == 'N' or x == 'n'):
