@@ -1,12 +1,32 @@
 from google.cloud import vision
 from google.cloud.vision import types
+from PIL import Image, ImageFilter
 import os
 import requests
 import sys
 import io
 
+"""
+Takes in the path to a file, and returns the path of a temporary image
+"""
 
-def ocr_main(file, lang):
+
+def filter_file(file):
+    image = Image.open(file)
+    image = image.convert('L')
+    image = image.filter(ImageFilter.EDGE_ENHANCE)
+    image.save(".temp.png")
+    return ".temp.png"
+
+
+"""
+Destroys the temporary filtered image created for the reader
+"""
+def destroy_filter():
+    os.remove('.temp.png')
+
+def ocr_main(file, extension):
+    file = filter_file(file)
     if not os.environ["GOOGLE_APPLICATION_CREDENTIALS"]:
         print("Please make sure the environment variable GOOGLE_APPLICATIONS_CREDENTIALS is set to the path of your "
               "credentials file", file=sys.stderr)
@@ -17,13 +37,11 @@ def ocr_main(file, lang):
         content = image_file.read()
 
     image = vision.types.Image(content=content)
-
-    response = client.text_detection(image=image)
-    texts = response.text_annotations
-    for text in texts:
-        print(text.description)
-
-
+    response = client.document_text_detection(image=image)
+    destroy_filter()
+    f = open('.tmp.' + extension, 'w+')
+    print(response.full_text_annotation.text, file=f)
+    f.close()
 
 
 """
@@ -52,4 +70,4 @@ def ocr_main(file, lang):
 """
 
 if __name__ == "__main__":
-    ocr_main('python_code.png', 'python')
+    ocr_main('js_code.png', 'js')
