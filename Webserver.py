@@ -24,7 +24,7 @@ def index():
     img.save('.tmp.png')
 
     file_extension = settings["extension"]
-    ocr_main('.temp.png', file_extension)
+    ocr_main('.tmp.png', file_extension)
     try:
         return subprocess.check_output([settings['interpreter'], '.tmp.' + file_extension], stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
