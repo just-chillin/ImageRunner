@@ -7,8 +7,10 @@ import sys
 import io
 
 
-def ocr_main(file, lang):
+def ocr_main(file, ext):
     lines = []
+    tab = 0
+    highest = 0
 
     if not os.environ["GOOGLE_APPLICATION_CREDENTIALS"]:
         print("Please make sure the environment variable GOOGLE_APPLICATIONS_CREDENTIALS is set to the path of your "
@@ -34,13 +36,24 @@ def ocr_main(file, lang):
             print('\n\n')
 
             for paragraph in block.paragraphs:
-
+                for i in range(0,tab):
+                    lines.append("\t")
                 for word in paragraph.words:
                     word_text = ''.join([
                         symbol.text for symbol in word.symbols
                     ])
+                   # if(word.bounding_box.vertices[0].y > highest): #trying to figure out new line
+                    #    highest = word.bounding_box.vertices[0].y  #so its not based on paragraph
+                     #   lines.append("\n")
+                    lines.append(word_text)
 
-
+                if(lines[len(lines)-1] == ":"):
+                    tab = tab + 1
+                else:
+                    tab = tab - 1
+                line = ''.join(lines)
+                lines = []
+                print(line)
 
 
    # print(paragraphs)
