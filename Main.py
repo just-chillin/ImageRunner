@@ -26,7 +26,7 @@ def main():
         if(x == 'No' or 'N' or 'n' or 'no'):
             Loop_var = False
         if(x == 'Yes' or 'Y' or 'y' or 'yes'):
-            First_prompt = True
+            Loop_var = True
 
 
 if __name__ == "__main__":
