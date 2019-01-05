@@ -1,5 +1,7 @@
 import json
+import os
 from OCR import ocr_main
+from Webserver import app
 
 
 def prompt_user():
@@ -15,9 +17,10 @@ def prompt_user():
 def main():
     image, language = prompt_user()
     settings = json.load(open('config.json'))[language]
-    ocr_main(image, settings["extension"])
-
+    extension = settings["extension"]
+    ocr_main(image, extension)
+    os.system(settings["interpreter"] + " .tmp." + extension)
 
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True)

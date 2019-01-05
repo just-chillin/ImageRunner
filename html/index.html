@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImageRunner</title>
+</head>
+<form method="post" enctype="multipart/form-data">
+    Language: <select name="lang">
+    {% for lang in langs %}
+        <option value="{{ lang }}">{{ lang }}</option>
+    {% endfor %}
+</select>
+    Image File: <input type="file" name="img" accept="image/*">
+    <input type="submit">
+</form>
+</body>
+</html>

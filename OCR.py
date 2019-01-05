@@ -13,17 +13,18 @@ Takes in the path to a file, and returns the path of a temporary image
 
 def filter_file(file):
     image = Image.open(file)
-    image = image.convert('L')
-    image = image.filter(ImageFilter.EDGE_ENHANCE)
-    image.save(".temp.png")
-    return ".temp.png"
+    #image = image.convert('L')
+    #image = image.filter(ImageFilter.EDGE_ENHANCE)
+    image.save(".tmp.png")
+    return ".tmp.png"
 
 
 """
 Destroys the temporary filtered image created for the reader
 """
 def destroy_filter():
-    os.remove('.temp.png')
+    pass
+    #os.remove('.tmp.png')
 
 def ocr_main(file, extension):
     file = filter_file(file)
