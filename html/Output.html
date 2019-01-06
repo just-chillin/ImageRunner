@@ -4,88 +4,99 @@
 <div2 class="dood"></div2>
 <div3 class="colors"></div3>
 <style>
-  h1{
-      font-size:7vw;
-      text-align: center;
+    h1 {
+        font-size: 7vw;
+        text-align: center;
     }
-   div3{
-      position: absolute;
-      left: 0vw;
-      top: 6px;
-    }
-    div2{
-      position: absolute;
-      left: 2vw;
-      top: 3px;
-    }
-    div{
-      position: absolute;
-      left: 4vw;
-      top: 0px;
-    }
-  p{
-    text-align: center;
-  }
-    .foo {
-  float: left;
-  width: 3vw;
-  height: 100vw;
-  margin: 10px;
-  border: 1px solid rgba(0, 0, 0, .2);
-  background-color: #34a853
-  }
-  form{
-    text-align: center;
-  }
-  textarea{
-    border: 2px solid #fbbc05;
-    border-radius: 4px;
 
-  }
+    div3 {
+        position: absolute;
+        left: 0vw;
+        top: 6px;
+    }
+
+    div2 {
+        position: absolute;
+        left: 2vw;
+        top: 3px;
+    }
+
+    div {
+        position: absolute;
+        left: 4vw;
+        top: 0px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .foo {
+        float: left;
+        width: 3vw;
+        height: 100vw;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background-color: #34a853
+    }
+
+    form {
+        text-align: center;
+    }
+
+    textarea {
+        border: 2px solid #fbbc05;
+        border-radius: 4px;
+
+    }
+
     .dood {
-  float: left;
-  width: 3vw;
-  height: 100vw;
-  margin: 10px;
-  border: 1px solid rgba(0, 0, 0, .2);
-  background-color: #ea4335
-  }
+        float: left;
+        width: 3vw;
+        height: 100vw;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background-color: #ea4335
+    }
+
     .colors {
-  float: left;
-  width: 3vw;
-  height: 100vw;
-  margin: 10px;
-  border: 1px solid rgba(0, 0, 0, .2);
-  background-color: #4285f3
-  }
-  button{
-    float: right;
-  }
+        float: left;
+        width: 3vw;
+        height: 100vw;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background-color: #4285f3
+    }
+
+    button {
+        float: right;
+    }
 </style>
 <script>
-function myFunction() {
-  document.getElementById("Output").select();
-  document.execCommand('copy');
-}
+    function myFunction() {
+        document.getElementById("Output").select();
+        document.execCommand('copy');
+    }
 </script>
 <head>
     <meta charset="UTF-8">
     <title>ImageRunnerError</title>
 </head>
-    <h1>
-    <span style="color: #4285f4">I</span><span style="color: #ea4335">m</span><span style="color: #fbbc05">a</span><span style="color: #34a853">g</span><span style="color: #ea4335">e</span>
-    <span style="color: #4285f4">R</span><span style="color: #ea4335">u</span><span style="color: #fbbc05">n</span><span style="color: #34a853">n</span><span style="color: #ea4335">e</span><span style="color: #4285f3">r</span>
+<h1>
+    <span style="color: #4285f4">I</span><span style="color: #ea4335">m</span><span style="color: #fbbc05">a</span><span
+        style="color: #34a853">g</span><span style="color: #ea4335">e</span>
+    <span style="color: #4285f4">R</span><span style="color: #ea4335">u</span><span style="color: #fbbc05">n</span><span
+        style="color: #34a853">n</span><span style="color: #ea4335">e</span><span style="color: #4285f3">r</span>
 </h1>
 
 
 <body>
-  <p>Here is the output of the code in the picture!</p>
-
-</body>
+<p>Here is the output of the code in the picture!</p>
 <form>
- <textarea rows="4" cols="50" input type="text" id = "Output" name="Output" value="Norway" readonly>
+ <textarea rows="4" cols="50" id="Output" name="Output" value="Norway" readonly>
   {{ output }}
   </textarea>
 </form>
 <button onclick="myFunction()">Copy to Clipboard</button>
+</body>
 </html>
