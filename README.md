@@ -2,6 +2,8 @@
 Server-side code for an application that allows you to take a 
 picture of code and run it. 
 This was written for Hyland Software's hackathon.
+Keep in mind this is a proof-of-concept, as unfortounately, Google's OCR engine isn't
+accurate enough yet to be perfect, so there will be errors in text recognition.
 ### Running
 First set up [pipenv](https://pipenv.readthedocs.io/en/latest/),
 and in the project diretory run `pipenv install`. Next, make sure

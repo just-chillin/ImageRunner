@@ -37,7 +37,7 @@ def run_interpreter(language, code):
     try:
         output = subprocess.check_output([interpreter, program_fname])
     except subprocess.CalledProcessError as e:
-        output = e.output
+        output = "\0"
     run_program_lock.release()
     return output
 

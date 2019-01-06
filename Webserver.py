@@ -5,9 +5,9 @@ import json
 app = Flask(__name__)
 
 
-def get_webpage():
+def get_webpage(name):
     res = ''
-    for line in open('html/index.html'):
+    for line in open('html/%s' % name):
         res += line
     return res
 
@@ -22,6 +22,10 @@ def languages():
 def index():
     config = json.load(open('config.json'))
     if request.method == 'GET':
-        return render_template_string(get_webpage(), langs=config.keys())
+        return render_template_string(get_webpage('index.html'), langs=config.keys())
     else:
-        return run_image(request.files['img'], request.form['lang'])
+        result = run_image(request.files['img'], request.form['lang'])
+        if result == '\0':
+            return render_template_string(get_webpage('Error_output.html'), output=result)
+        else:
+            return render_template_string(get_webpage('Output.html'), output=result)
